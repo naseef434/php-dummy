@@ -1,4 +1,4 @@
-<?php  require 'connection.php' ?>;
+<?php  require 'connection.php' ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -55,8 +55,7 @@ $(document).ready(function() {
 		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">   Language </a>
 		    <ul class="dropdown-menu small">
 				<li><a class="dropdown-item" href="#">English</a></li>
-				<li><a class="dropdown-item" href="#">Arabic</a></li>
-				<li><a class="dropdown-item" href="#">Russian </a></li>
+			
 		    </ul>
 		</li>
 		<li class="nav-item dropdown">
@@ -84,21 +83,7 @@ $(document).ready(function() {
 			<img class="logo" src="./images/logo.png">
 		</a> <!-- brand-wrap.// -->
 	</div>
-	<div class="col-lg col-sm col-md col-6 flex-grow-0">
-		<div class="category-wrap dropdown d-inline-block float-right">
-			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-				<i class="fa fa-bars"></i> All category 
-			</button>
-			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
-			</div>
-		</div>  <!-- category-wrap.// -->
-	</div> <!-- col.// -->
+
 	<a href="./store.html" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
@@ -118,11 +103,11 @@ $(document).ready(function() {
 					<div class="widget-header">
 						<small class="title text-muted">Welcome guest!</small>
 						<div> 
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
+							<a href="./signin.php">Sign in</a> <span class="dark-transp"> | </span>
+							<a href="./register.php"> Register</a>
 						</div>
 					</div>
-					<a href="./cart.html" class="widget-header pl-3 ml-3">
+					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">0</span>
 					</a>
@@ -165,17 +150,17 @@ $(document).ready(function() {
     $result = mysqli_query($conn, $sql);
      if (mysqli_num_rows($result) > 0) {
      	while($row = mysqli_fetch_assoc($result)) { 
-     	
-
+     	$image = "uploads/".$row["image"];
      	
      	?>
 
      	<tr>
 	<td>
 		<figure class="itemside align-items-center">
-			<div class="aside"><img src="./images/items/11.jpg" class="img-sm"></div>
+						<?php echo '<div class="aside">'.'<img src="'.$image.'" class="img-sm" >'; ?> </div>
 			<figcaption class="info">
-				<a href="#" class="title text-dark"><?php echo $row['book_name'] ?></a>
+			 
+				<a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title text-dark"><?php echo $row['book_name'] ?></a>
 				<p class="text-muted small"><?php echo "Author : " .$row['author'] ?> </p>
 			</figcaption>
 		</figure>
@@ -196,7 +181,7 @@ $(document).ready(function() {
 	</td>
 	<td> 
 		<div class="price-wrap"> 
-			<var class="price"><?php echo $row['price'] . "  EUR"?></var> 
+			<var class="price"><?php echo $row['price'] . " -  EUR"?></var> 
 			
 		</div> <!-- price-wrap .// -->
 	</td>

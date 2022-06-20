@@ -54,16 +54,14 @@ $(document).ready(function() {
 		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">   Language </a>
 		    <ul class="dropdown-menu small">
 				<li><a class="dropdown-item" href="#">English</a></li>
-				<li><a class="dropdown-item" href="#">Arabic</a></li>
-				<li><a class="dropdown-item" href="#">Russian </a></li>
+				
 		    </ul>
 		</li>
 		<li class="nav-item dropdown">
 			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> USD </a>
 			<ul class="dropdown-menu small">
 				<li><a class="dropdown-item" href="#">EUR</a></li>
-				<li><a class="dropdown-item" href="#">AED</a></li>
-				<li><a class="dropdown-item" href="#">RUBL </a></li>
+				
 		    </ul>
 		</li>
     </ul>
@@ -83,21 +81,7 @@ $(document).ready(function() {
 			<img class="logo" src="./images/logo.png">
 		</a> <!-- brand-wrap.// -->
 	</div>
-	<div class="col-lg col-sm col-md col-6 flex-grow-0">
-		<div class="category-wrap dropdown d-inline-block float-right">
-			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-				<i class="fa fa-bars"></i> All category 
-			</button>
-			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
-			</div>
-		</div>  <!-- category-wrap.// -->
-	</div> <!-- col.// -->
+
 	<a href="./store.html" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
@@ -117,8 +101,8 @@ $(document).ready(function() {
 					<div class="widget-header">
 						<small class="title text-muted">Welcome guest!</small>
 						<div> 
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
+							<a href="./signin.php">Sign in</a> <span class="dark-transp"> | </span>
+							<a href="./register.php"> Register</a>
 						</div>
 					</div>
 					<a href="./cart.html" class="widget-header pl-3 ml-3">
@@ -138,75 +122,34 @@ $(document).ready(function() {
 
 
 <!-- ========================= SECTION CONTENT ========================= -->
-<section class="section-content padding-y">
+<section class="section-conten padding-y" style="min-height:84vh">
 
-<!-- ============================ COMPONENT REGISTER   ================================= -->
-	<div class="card mx-auto" style="max-width:520px; margin-top:40px;">
-      <article class="card-body">
-		<header class="mb-4"><h4 class="card-title">Sign up</h4></header>
-		<form>
-				<div class="form-row">
-					<div class="col form-group">
-						<label>First name</label>
-					  	<input type="text" class="form-control" placeholder="">
-					</div> <!-- form-group end.// -->
-					<div class="col form-group">
-						<label>Last name</label>
-					  	<input type="text" class="form-control" placeholder="">
-					</div> <!-- form-group end.// -->
-				</div> <!-- form-row end.// -->
-				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" placeholder="">
-					<small class="form-text text-muted">We'll never share your email with anyone else.</small>
-				</div> <!-- form-group end.// -->
-				<div class="form-group">
-					<label class="custom-control custom-radio custom-control-inline">
-					  <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
-					  <span class="custom-control-label"> Male </span>
-					</label>
-					<label class="custom-control custom-radio custom-control-inline">
-					  <input class="custom-control-input" type="radio" name="gender" value="option2">
-					  <span class="custom-control-label"> Female </span>
-					</label>
-				</div> <!-- form-group end.// -->
-				<div class="form-row">
-					<div class="form-group col-md-6">
-					  <label>City</label>
-					  <input type="text" class="form-control">
-					</div> <!-- form-group end.// -->
-					<div class="form-group col-md-6">
-					  <label>Country</label>
-					  <select id="inputState" class="form-control">
-					    <option> Choose...</option>
-					      <option>Uzbekistan</option>
-					      <option>Russia</option>
-					      <option selected="">United States</option>
-					      <option>India</option>
-					      <option>Afganistan</option>
-					  </select>
-					</div> <!-- form-group end.// -->
-				</div> <!-- form-row.// -->
-				<div class="form-row">
-					<div class="form-group col-md-6">
-						<label>Create password</label>
-					    <input class="form-control" type="password">
-					</div> <!-- form-group end.// --> 
-					<div class="form-group col-md-6">
-						<label>Repeat password</label>
-					    <input class="form-control" type="password">
-					</div> <!-- form-group end.// -->  
-				</div>
-			    <div class="form-group">
-			        <button type="submit" class="btn btn-primary btn-block"> Register  </button>
-			    </div> <!-- form-group// -->      
-			        
-			</form>
-		</article><!-- card-body.// -->
+<!-- ============================ COMPONENT LOGIN   ================================= -->
+	<div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+      <div class="card-body">
+      <h4 class="card-title mb-4">Sign in</h4>
+      <form>
+          <div class="form-group">
+			 <input type="email" class="form-control" placeholder="Email Address" >
+          </div> <!-- form-group// -->
+          <div class="form-group">
+			<input type="password" class="form-control" placeholder="Password" >
+          </div> <!-- form-group// -->
+          
+          <div class="form-group">
+          	<a href="#" class="float-right">Forgot password?</a> 
+           
+          </div> <!-- form-group form-check .// -->
+          <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block"> Login  </button>
+          </div> <!-- form-group// -->    
+      </form>
+      </div> <!-- card-body.// -->
     </div> <!-- card .// -->
-    <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
-    <br><br>
-<!-- ============================ COMPONENT REGISTER  END.// ================================= -->
+
+     <p class="text-center mt-4">Don't have account? <a href="#">Sign up</a></p>
+     <br><br>
+<!-- ============================ COMPONENT LOGIN  END.// ================================= -->
 
 
 </section>
