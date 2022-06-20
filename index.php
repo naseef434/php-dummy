@@ -171,7 +171,7 @@ $(document).ready(function() {
         <div class="card card-product-grid">
             <a href="./product-detail.html" class="img-wrap"> <img src="images/items/7.jpg"> </a>
             <figcaption class="info-wrap">
-                <a href="./product-detail.php?id=<?php echo $row['id']; ?> " class="title"><?php echo $row["book_name"] ?></a>
+                <a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title"><?php echo $row["book_name"] ?></a>
                 <div class="price mt-1"><?php echo $row["price"] ?></div> <!-- price-wrap.// -->
             </figcaption>
         </div>
