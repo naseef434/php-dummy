@@ -83,21 +83,7 @@ $(document).ready(function() {
 			<img class="logo" src="./images/logo.png">
 		</a> <!-- brand-wrap.// -->
 	</div>
-	<div class="col-lg col-sm col-md col-6 flex-grow-0">
-		<div class="category-wrap dropdown d-inline-block float-right">
-			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-				<i class="fa fa-bars"></i> All category 
-			</button>
-			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
-			</div>
-		</div>  <!-- category-wrap.// -->
-	</div> <!-- col.// -->
+
 	<a href="./store.html" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
@@ -121,7 +107,7 @@ $(document).ready(function() {
 							<a href="./register.html"> Register</a>
 						</div>
 					</div>
-					<a href="./cart.html" class="widget-header pl-3 ml-3">
+					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">0</span>
 					</a>
@@ -143,50 +129,6 @@ $(document).ready(function() {
 <!-- ============================ COMPONENT 2 ================================= -->
 <div class="row">
 		<main class="col-md-8">
-
-<article class="card mb-4">
-<div class="card-body">
-	<h4 class="card-title mb-4">Review cart</h4>
-	<div class="row">
-		<div class="col-md-6">
-			<figure class="itemside  mb-4">
-				<div class="aside"><img src="./images/items/1.jpg" class="border img-sm"></div>
-				<figcaption class="info">
-					<p>Apple iPad (2019) 32Gb Wi-Fi gold </p>
-					<span class="text-muted">2x = $560 </span>
-				</figcaption>
-			</figure>
-		</div> <!-- col.// -->
-		<div class="col-md-6">
-			<figure class="itemside  mb-4">
-				<div class="aside"><img src="./images/items/2.jpg" class="border img-sm"></div>
-				<figcaption class="info">
-					<p>Apple iPad (2019) 32Gb Wi-Fi gold </p>
-					<span class="text-muted">2x = $560 </span>
-				</figcaption>
-			</figure>
-		</div> <!-- col.// -->
-		<div class="col-md-6">
-			<figure class="itemside mb-4">
-				<div class="aside"><img src="./images/items/3.jpg" class="border img-sm"></div>
-				<figcaption class="info">
-					<p>Apple iPad (2019) 32Gb Wi-Fi gold </p>
-					<span class="text-muted">2x = $560 </span>
-				</figcaption>
-			</figure>
-		</div> <!-- col.// -->
-		<div class="col-md-6">
-			<figure class="itemside  mb-4">
-				<div class="aside"><img src="./images/items/4.jpg" class="border img-sm"></div>
-				<figcaption class="info">
-					<p>Apple iPad (2019) 32Gb Wi-Fi gold </p>
-					<span class="text-muted">2x = $560 </span>
-				</figcaption>
-			</figure>
-		</div> <!-- col.// -->
-	</div> <!-- row.// -->
-</div> <!-- card-body.// -->
-</article> <!-- card.// -->
 
 
 <article class="card mb-4">
@@ -327,7 +269,7 @@ $(document).ready(function() {
 			<p class="text-center mb-3">
 				<img src="./images/misc/payments.png" height="26">
 			</p>
-			<a href="./place-order.html" class="btn btn-primary btn-block"> Place Order </a>
+			<a href="./order_complete.php" class="btn btn-primary btn-block"> Place Order </a>
 			
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->

@@ -128,12 +128,12 @@ $(document).ready(function() {
 	<div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
       <div class="card-body">
       <h4 class="card-title mb-4">Sign in</h4>
-      <form>
+      <form action="sign_in.php" method="post">
           <div class="form-group">
-			 <input type="email" class="form-control" placeholder="Email Address" >
+			 <input type="email" class="form-control" name="email" placeholder="Email Address" >
           </div> <!-- form-group// -->
           <div class="form-group">
-			<input type="password" class="form-control" placeholder="Password" >
+			<input type="password" class="form-control" name="password" placeholder="Password" >
           </div> <!-- form-group// -->
           
           <div class="form-group">
@@ -168,7 +168,6 @@ $(document).ready(function() {
 	</div><!-- //container -->
 </footer>
 <!-- ========================= FOOTER END // ========================= -->
-
 
 
 </body>

@@ -94,11 +94,23 @@ $(document).ready(function() {
 	<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
 				<div class="d-flex justify-content-end mb-3 mb-lg-0">
 					<div class="widget-header">
-						<small class="title text-muted">Welcome guest!</small>
-						<div> 
-							<a href="./signin.php">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.php"> Register</a>
-						</div>
+						<small class="title text-muted"> <?php session_start(); 
+						if ($_SESSION["email"] == "") {
+							echo   'Welcome guest!'.'</small>';
+														echo '<div>'. 
+							'<a href="./signin.php">Sign in</a>'. '<span class="dark-transp"> | </span>'.
+							'<a href="./register.php"> Register</a>'.
+						'</div>';
+
+						}else{
+							echo "welcome". $_SESSION["email"] . '</small>';	
+						} 
+						 
+						
+							
+						 ?>
+						
+						
 					</div>
 					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
