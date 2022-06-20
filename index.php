@@ -154,7 +154,7 @@ $(document).ready(function() {
 	
 <div class="row">
 <?php 
-
+	
     if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
     }
@@ -166,13 +166,13 @@ $(document).ready(function() {
       // output data of each row
 
       while($row = mysqli_fetch_assoc($result)) {?>
-        
+     
        <div class="col-md-3">
         <div class="card card-product-grid">
-            <a href="./product-detail.html" class="img-wrap"> <img src="images/items/7.jpg"> </a>
+           <a href="./product-detail.php?id=<?php echo $row['id']; ?>"class="img-wrap"> <img src="uploads/<?php echo $row["image"] ?>"></a>
             <figcaption class="info-wrap">
                 <a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title"><?php echo $row["book_name"] ?></a>
-                <div class="price mt-1"><?php echo $row["price"] ?></div> <!-- price-wrap.// -->
+                <div class="price mt-1">Price  - <?php echo $row["price"] ?></div> <!-- price-wrap.// -->
             </figcaption>
         </div>
     </div> 

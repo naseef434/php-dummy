@@ -47,7 +47,7 @@
 <h3>Add Product </h3>
 <div class="container">
 
-		<form action="upload.php" method="post" enctype="multipart/form-data">
+		<form action="add_books.php" method="post" enctype="multipart/form-data">
 	  	 <div class="form-group">
     		<label for="exampleInputEmail1">Books Name</label>
     		<input type="text" class="form-control"  name="book_name"  placeholder="Enter name">
@@ -74,12 +74,14 @@
 
  		  <div class="form-group">
     		<label for="exampleInputEmail1">Quantity</label>
-    		<input type="text" class="form-control" name="qty" placeholder="Enter Auther Name">
+    		<input type="text" class="form-control" name="qty" placeholder="Enter Auther Name" required>
    
  		 </div>
 	  Select image to upload:
 	  <input type="file" name="fileToUpload" id="fileToUpload">
-	  <input type="submit" value="Submit" name="submit">
+	   <input type="submit" value="Submit" name="submit" class="btn btn-primary" >
+	
+	  <br><br><br>
 	
 	</form>
 </div>

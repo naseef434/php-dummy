@@ -151,24 +151,29 @@ $price = 0;
 	}
 ?>
 
-
-<div class="card">
-	<div class="row no-gutters">
-		<aside class="col-md-6">
-<article class="gallery-wrap"> 
-	<div class="img-big-wrap">
-	   <a href="#"><img src="./images/items/12.jpg"></a>
-	</div> <!-- img-big-wrap.// -->
-	
-</article> <!-- gallery-wrap .end// -->
-		</aside>
-		<main class="col-md-6 border-left">
-<article class="content-body">
 <?php 	
 
 	if ($result->num_rows > 0) {
   	// output data of each row
   		while($row = $result->fetch_assoc()) {
+  		$image = "uploads/".$row["image"];  		
+  		
+		echo '<div class="card">';
+        echo '<div class="row no-gutters">';
+		echo '<aside class="col-md-6">';
+		echo '<article class="gallery-wrap">'; 
+	    echo '<div class="img-big-wrap">';  
+	   	echo '<a href="#">'.'<img src="'.$image.'">'; echo '</a>';
+	   echo '</div>';
+	
+      echo "</article>";
+		echo "</aside>";
+		echo '<main class="col-md-6 border-left">';
+	echo '<article class="content-body">';
+?>
+<?php 	
+
+
     	echo '<h2 class="title">' .$row["book_name"] . '</h2>' . "<br>";
     	echo '<h6 >'."Author : " .$row["author"] . '</h6>' . "| Qty - ". $row["quantity"]. "<br>";
     	echo '<div class="mb-3">' .  
