@@ -1,3 +1,4 @@
+<?php  session_start();  ?>
 <?php  require 'connection.php' ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -72,13 +73,29 @@ $(document).ready(function() {
 	<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
 				<div class="d-flex justify-content-end mb-3 mb-lg-0">
 					<div class="widget-header">
-						<small class="title text-muted">Welcome guest!</small>
-						<div> 
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
-						</div>
+						<small class="title text-muted"> <?php
+						if ($_SESSION["email"]) {
+							echo   'Welcome!'.$_SESSION["email"].'</small>';
+														echo '<div>'. 
+							
+							'<a href="./logout.php"> Logout</a>'.
+						'</div>';
+
+						}else{
+							// echo "welcome". $_SESSION["email"] . '</small>';	
+						echo '<div>'. 
+							'<a href="./signin.php">Sign in</a>'. '<span class="dark-transp"> | </span>'.
+							'<a href="./register.php"> Register</a>'.
+						'</div>';
+						} 
+						 
+						
+							
+						 ?>
+						
+						
 					</div>
-					<a href="cartDetails.php" class="widget-header pl-3 ml-3">
+					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">0</span>
 					</a>
@@ -136,7 +153,7 @@ $price = 0;
 			'</div>';
 
 		echo '<p>'.$row["discription"].'<p/>'; ?>
-		<a href="./addCart.php?id=<?php echo $row['id']; ?>" class="btn  btn-primary"><span class="text">Add to cart</span><i class="fas fa-shopping-cart"></i></a>
+		<a href="./addCart.php?id=<?php echo $row['id']; ?>" class="btn  btn-primary" onclick="myFunction()"><span class="text">Add to cart</span><i class="fas fa-shopping-cart"></i></a>
   <?php }
 } else {
   echo "0 results";
@@ -159,6 +176,10 @@ $price = 0;
 </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
-
+<script>
+function myFunction() {
+  alert("added to cart!");
+}
+</script>
 </body>
 </html>

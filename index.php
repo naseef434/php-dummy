@@ -78,7 +78,7 @@ $(document).ready(function() {
 							echo   'Welcome!'.$_SESSION["email"].'</small>';
 														echo '<div>'. 
 							
-							'<a href="./register.php"> Logout</a>'.
+							'<a href="./logout.php"> Logout</a>'.
 						'</div>';
 
 						}else{

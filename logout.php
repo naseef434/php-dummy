@@ -1,5 +1,6 @@
 <?php
-   unset($_SESSION['quantity']);
+	session_start();  	
+   unset($_SESSION['email']);
    header("Location: store.php");
 
 ?>

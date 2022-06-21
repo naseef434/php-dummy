@@ -1,3 +1,4 @@
+<?php  session_start();  ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -68,14 +69,30 @@ $(document).ready(function() {
 		    </div>
 		</form> <!-- search-wrap .end// -->
 	</div> <!-- col.// -->
-	<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+		<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
 				<div class="d-flex justify-content-end mb-3 mb-lg-0">
 					<div class="widget-header">
-						<small class="title text-muted">Welcome guest!</small>
-						<div> 
-							<a href="./signin.html">Sign in</a> <span class="dark-transp"> | </span>
-							<a href="./register.html"> Register</a>
-						</div>
+						<small class="title text-muted"> <?php
+						if ($_SESSION["email"]) {
+							echo   'Welcome!'.$_SESSION["email"].'</small>';
+														echo '<div>'. 
+							
+							'<a href="./logout.php"> Logout</a>'.
+						'</div>';
+
+						}else{
+							// echo "welcome". $_SESSION["email"] . '</small>';	
+						echo '<div>'. 
+							'<a href="./signin.php">Sign in</a>'. '<span class="dark-transp"> | </span>'.
+							'<a href="./register.php"> Register</a>'.
+						'</div>';
+						} 
+						 
+						
+							
+						 ?>
+						
+						
 					</div>
 					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
@@ -108,19 +125,19 @@ $(document).ready(function() {
 		<div class="row">
 			<div class="form-group col-sm-6">
 				<label>Frst name</label>
-				<input type="text" placeholder="Type here" class="form-control">
+				<input type="text" placeholder="Type here" class="form-control" required>
 			</div>
 			<div class="form-group col-sm-6">
 				<label>Last name</label>
-				<input type="text" placeholder="Type here" class="form-control">
+				<input type="text" placeholder="Type here" class="form-control" required>
 			</div>
 			<div class="form-group col-sm-6">
 				<label>Phone</label>
-				<input type="text" value="+998" class="form-control">
+				<input type="text" value="+998" class="form-control" required>
 			</div>
 			<div class="form-group col-sm-6">
 				<label>Email</label>
-				<input type="email" placeholder="example@gmail.com" class="form-control">
+				<input type="email" placeholder="example@gmail.com" class="form-control" required>
 			</div>
 		</div> <!-- row.// -->	
 	</form>
@@ -146,11 +163,11 @@ $(document).ready(function() {
 				</div>
 				<div class="form-group col-sm-6">
 					<label>State*</label>
-					<input type="text" placeholder="Type here" class="form-control">
+					<input type="text" placeholder="Type here" class="form-control" required>
 				</div>
 				<div class="form-group col-sm-8">
 					<label>Street*</label>
-					<input type="text" placeholder="Type here" class="form-control">
+					<input type="text" placeholder="Type here" class="form-control" required>
 				</div>
 				<div class="form-group col-sm-4">
 					<label>Building</label>
@@ -162,7 +179,7 @@ $(document).ready(function() {
 				</div>
 				<div class="form-group col-sm-4">
 					<label>Postal code</label>
-					<input type="text" placeholder="" class="form-control">
+					<input type="text" placeholder="" class="form-control" required>
 				</div>
 				<div class="form-group col-sm-4">
 					<label>Zip</label>
@@ -239,7 +256,7 @@ $(document).ready(function() {
 			<p class="text-center mb-3">
 				<img src="./images/misc/payments.png" height="26">
 			</p>
-			<a href="checkout.php" class="btn btn-primary btn-block"> Place Order </a>
+			<a href="checkout.php" type="submit" class="btn btn-primary btn-block" onclick="myFunction()"> Place Order </a>
 			
 		</div> <!-- card-body.// -->
 		</div> <!-- card.// -->
@@ -257,5 +274,11 @@ $(document).ready(function() {
 
 
 <!-- ========================= SECTION CONTENT END// ========================= -->
+<script>
+function myFunction() {
+  alert("order placed thank you!");
+}
+</script>
+
 </body>
 </html>
