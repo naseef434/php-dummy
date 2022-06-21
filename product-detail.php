@@ -1,4 +1,4 @@
-<?php  require 'connection.php' ?>;
+<?php  require 'connection.php' ?>
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -85,21 +85,7 @@ $(document).ready(function() {
 			<img class="logo" src="./images/logo.png">
 		</a> <!-- brand-wrap.// -->
 	</div>
-	<div class="col-lg col-sm col-md col-6 flex-grow-0">
-		<div class="category-wrap dropdown d-inline-block float-right">
-			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> 
-				<i class="fa fa-bars"></i> All category 
-			</button>
-			<div class="dropdown-menu">
-				<a class="dropdown-item" href="#">Machinery / Mechanical Parts / Tools </a>
-				<a class="dropdown-item" href="#">Consumer Electronics / Home Appliances </a>
-				<a class="dropdown-item" href="#">Auto / Transportation</a>
-				<a class="dropdown-item" href="#">Apparel / Textiles / Timepieces </a>
-				<a class="dropdown-item" href="#">Home & Garden / Construction / Lights </a>
-				<a class="dropdown-item" href="#">Beauty & Personal Care / Health </a> 
-			</div>
-		</div>  <!-- category-wrap.// -->
-	</div> <!-- col.// -->
+	
 	<a href="./store.html" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
