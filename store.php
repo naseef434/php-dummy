@@ -43,7 +43,6 @@ $(document).ready(function() {
 <body>
 
 
-
 <header class="section-header">
 
 <section class="header-main border-bottom">
@@ -54,7 +53,7 @@ $(document).ready(function() {
 			<img class="logo" src="./images/logo.png">
 		</a> <!-- brand-wrap.// -->
 	</div>
-	
+
 	<a href="./store.html" class="btn btn-outline-primary">Store</a>
 	<div class="col-lg  col-md-6 col-sm-12 col">
 		<form action="#" class="search">
@@ -78,7 +77,7 @@ $(document).ready(function() {
 							<a href="./register.html"> Register</a>
 						</div>
 					</div>
-					<a href="cartDetails.php" class="widget-header pl-3 ml-3">
+					<a href="./cartDetails.php" class="widget-header pl-3 ml-3">
 						<div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
 						<span class="badge badge-pill badge-danger notify">0</span>
 					</a>
@@ -89,76 +88,108 @@ $(document).ready(function() {
 </section> <!-- header-main .// -->
 
 
+
 </header> <!-- section-header.// -->
 
 
 
-<section class="section-content padding-y bg">
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg">
+<div class="container">
+	<h2 class="title-page">Our Store</h2>
+	
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content padding-y">
 <div class="container">
 
-<!-- ============================ COMPONENT 1 ================================= -->
+<div class="row">
+	<aside class="col-md-3">
+		
+
+
+	</aside> <!-- col.// -->
+	<main class="col-md-9">
+
+<header class="border-bottom mb-4 pb-3">
+		<div class="form-inline">
+			<span class="mr-md-auto">32 Items found </span>
+			
+		</div>
+</header><!-- sect-heading -->
+
+<div class="row">
 <?php 
-$price = 0;
-	if (isset($_GET['id'])) {
-	 	$id = $_GET['id'];
-	 	$sql = "SELECT * FROM books WHERE id = $id ";
-	 	$result = $conn->query($sql);	 
-	}
-?>
-
-<?php 	
-
-	if ($result->num_rows > 0) {
-  	// output data of each row
-  		while($row = $result->fetch_assoc()) {
-  		$image = "uploads/".$row["image"];  		
-  		
-		echo '<div class="card">';
-        echo '<div class="row no-gutters">';
-		echo '<aside class="col-md-6">';
-		echo '<article class="gallery-wrap">'; 
-	    echo '<div class="img-big-wrap">';  
-	   	echo '<a href="#">'.'<img src="'.$image.'">'; echo '</a>';
-	   echo '</div>';
 	
-      echo "</article>";
-		echo "</aside>";
-		echo '<main class="col-md-6 border-left">';
-	echo '<article class="content-body">';
-?>
-<?php 	
+    if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+    
+    $sql = "SELECT * FROM books";
+    $result = mysqli_query($conn, $sql);
 
+    if (mysqli_num_rows($result) > 0) {
+      // output data of each row
 
-    	echo '<h2 class="title">' .$row["book_name"] . '</h2>' . "<br>";
-    	echo '<h6 >'."Author : " .$row["author"] . '</h6>' . "| Qty - ". $row["quantity"]. "<br>";
-    	echo '<div class="mb-3">' .  
-			'<var class="price h4">'."Price  : " . $row["price"]. '</var>'. 
-			'</div>';
+      while($row = mysqli_fetch_assoc($result)) {?>
+     
+       <div class="col-md-3">
+        <div class="card card-product-grid">
+           <a href="./product-detail.php?id=<?php echo $row['id']; ?>"class="img-wrap"> <img src="uploads/<?php echo $row["image"] ?>"></a>
+            <figcaption class="info-wrap">
+                <a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title"><?php echo $row["book_name"] ?></a>
+                <div class="price mt-1">Price  - <?php echo $row["price"] ?></div> <!-- price-wrap.// -->
+            </figcaption>
+        </div>
+    </div> 
+    <?php 
+      }
+    } else {
+      echo "0 results";
+    }
 
-		echo '<p>'.$row["discription"].'<p/>'; ?>
-		<a href="./addCart.php?id=<?php echo $row['id']; ?>" class="btn  btn-primary"><span class="text">Add to cart</span><i class="fas fa-shopping-cart"></i></a>
-  <?php }
-} else {
-  echo "0 results";
-}
-?>
+    mysqli_close($conn);
 
-	<hr>
-
+?>	
 	
-	</article> <!-- product-info-aside .// -->
-		</main> <!-- col.// -->
-	</div> <!-- row.// -->
-</div> <!-- card.// -->
-<!-- ============================ COMPONENT 1 END .// ================================= -->
-
-<br>
+</div> <!-- row.// -->
 
 
+<nav class="mt-4" aria-label="Page navigation sample">
+  <ul class="pagination">
+    <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+	</main> <!-- col.// -->
+
+</div>
 
 </div> <!-- container .//  -->
 </section>
 <!-- ========================= SECTION CONTENT END// ========================= -->
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="section-footer border-top padding-y">
+	<div class="container">
+		<p class="float-md-right"> 
+			&copy Copyright 2019 All rights reserved
+		</p>
+		<p>
+			<a href="#">Terms and conditions</a>
+		</p>
+	</div><!-- //container -->
+</footer>
+<!-- ========================= FOOTER END // ========================= -->
+
+
 
 </body>
 </html>

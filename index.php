@@ -1,4 +1,4 @@
-
+<?php  session_start();  ?>
 <?php  require 'connection.php' ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -45,28 +45,7 @@ $(document).ready(function() {
 
 
 <header class="section-header">
-<nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
-<div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTop4">
-    <ul class="navbar-nav mr-auto">
-    	<li class="nav-item dropdown">
-		 	<a href="#" class="nav-link">   English </a>
-		    
-		</li>
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link"> USD </a>
-		</li>
-    </ul>
-    <ul class="navbar-nav">
-		<li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
-		<li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Call us </a></li>
-	</ul> <!-- list-inline //  -->
-  </div> <!-- navbar-collapse .// -->
-</div> <!-- container //  -->
-</nav>
+
 
 <section class="header-main border-bottom">
 	<div class="container">
@@ -94,16 +73,20 @@ $(document).ready(function() {
 	<div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
 				<div class="d-flex justify-content-end mb-3 mb-lg-0">
 					<div class="widget-header">
-						<small class="title text-muted"> <?php session_start(); 
-						if ($_SESSION["email"] == "") {
-							echo   'Welcome guest!'.'</small>';
+						<small class="title text-muted"> <?php
+						if ($_SESSION["email"]) {
+							echo   'Welcome!'.$_SESSION["email"].'</small>';
 														echo '<div>'. 
-							'<a href="./signin.php">Sign in</a>'. '<span class="dark-transp"> | </span>'.
-							'<a href="./register.php"> Register</a>'.
+							
+							'<a href="./register.php"> Logout</a>'.
 						'</div>';
 
 						}else{
-							echo "welcome". $_SESSION["email"] . '</small>';	
+							// echo "welcome". $_SESSION["email"] . '</small>';	
+						echo '<div>'. 
+							'<a href="./signin.php">Sign in</a>'. '<span class="dark-transp"> | </span>'.
+							'<a href="./register.php"> Register</a>'.
+						'</div>';
 						} 
 						 
 						
@@ -145,7 +128,7 @@ $(document).ready(function() {
 <div class="container">
 
 <header class="section-heading">
-	<a href="./store.html" class="btn btn-outline-primary float-right">See all</a>
+	<a href="./store.php" class="btn btn-outline-primary float-right">See all</a>
 	<h3 class="section-title">Popular products</h3>
 </header><!-- sect-heading -->
 

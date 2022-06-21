@@ -8,7 +8,7 @@
 	$sql="SELECT * from customer WHERE email='$email'AND password='$pass'";  
 	$result = mysqli_query($conn, $sql);
 	 if (mysqli_num_rows($result) > 0) {
-	 	 $_SESSION['email']=$email;
+	 	  $_SESSION['email']=$email;
 	 	  header("Location: index.php");
 	 }
 	 else  

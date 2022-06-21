@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php  require 'connection.php' ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -44,36 +45,7 @@ $(document).ready(function() {
 
 
 <header class="section-header">
-<nav class="navbar p-md-0 navbar-expand-sm navbar-light border-bottom">
-<div class="container">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTop4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTop4">
-    <ul class="navbar-nav mr-auto">
-    	<li class="nav-item dropdown">
-		 	<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">   Language </a>
-		    <ul class="dropdown-menu small">
-				<li><a class="dropdown-item" href="#">English</a></li>
-			
-		    </ul>
-		</li>
-		<li class="nav-item dropdown">
-			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> USD </a>
-			<ul class="dropdown-menu small">
-				<li><a class="dropdown-item" href="#">EUR</a></li>
-				<li><a class="dropdown-item" href="#">AED</a></li>
-				<li><a class="dropdown-item" href="#">RUBL </a></li>
-		    </ul>
-		</li>
-    </ul>
-    <ul class="navbar-nav">
-		<li><a href="#" class="nav-link"> <i class="fa fa-envelope"></i> Email </a></li>
-		<li><a href="#" class="nav-link"> <i class="fa fa-phone"></i> Call us </a></li>
-	</ul> <!-- list-inline //  -->
-  </div> <!-- navbar-collapse .// -->
-</div> <!-- container //  -->
-</nav>
+
 
 <section class="header-main border-bottom">
 	<div class="container">
@@ -141,7 +113,7 @@ $(document).ready(function() {
 </thead>
 <tbody>
 <?php 
-
+	
     if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
     }
@@ -160,7 +132,7 @@ $(document).ready(function() {
 						<?php echo '<div class="aside">'.'<img src="'.$image.'" class="img-sm" >'; ?> </div>
 			<figcaption class="info">
 			 
-				<a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title text-dark"><?php echo $row['book_name'] ?></a>
+				<a href="./product-detail.php?id=<?php echo $row['id']; ?>" class="title text-dark"><b><?php echo $row['book_name'] ?></b></a>
 				<p class="text-muted small"><?php echo "Author : " .$row['author'] ?> </p>
 			</figcaption>
 		</figure>
@@ -169,12 +141,9 @@ $(document).ready(function() {
 		<!-- col.// -->
 					<div class="col"> 
 						<div class="input-group input-spinner">
-							<div class="input-group-prepend">
-							<button class="btn btn-light" type="button" id="button-plus"> <i class="fa fa-minus"></i> </button>
-							</div>
+							
 							<input type="text" class="form-control"  value="1">
-							<div class="input-group-append">
-							<button class="btn btn-light" type="button" id="button-minus"> <i class="fa fa-plus"></i> </button>
+							
 							</div>
 						</div> <!-- input-group.// -->
 					</div> <!-- col.// -->
@@ -186,10 +155,12 @@ $(document).ready(function() {
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right"> 
-	<a href="" class="btn btn-danger"> Remove</a>
+	<a href="deleteCart.php?id=<?php echo $row['id']; ?>" class="btn btn-danger"> Remove</a>
 	</td>
 </tr>
      	<?php
+     	 $_SESSION["books_id"] = $row['id'];
+     	 $_SESSION["quantity"] = $row['quantity'];
      	}
      }
  ?>
